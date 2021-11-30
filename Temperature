@@ -1,0 +1,133 @@
+package selfProgramming;
+
+import java.util.Scanner;
+
+public class Temperature {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("------------------------------------- \n");
+		System.out.println("\n WELCOME TO HUNGRY CODER \n");
+		System.out.println("------------------------------------- \n");
+
+		double temperature;
+		char pick;
+		Scanner scan = new Scanner (System.in);
+
+		String [] name = new String[15];
+		int [] phone_number = new int[10];
+		int a = 1;
+		
+		do
+		{
+		System.out.print("Please enter Temperature : ");
+		temperature = scan.nextDouble();
+		System.out.println("Your temperature is : " +temperature);
+
+		if((temperature>=36.0) && (temperature<=37.5))
+		{
+			System.out.println("You may enter the premise. Enjoy the service provided in our permise.");
+			System.out.print("Please enter your name: ");
+			name[a] = scan.next();
+			scan.nextLine();
+			System.out.print("Please enter your phone number: ");
+			phone_number[a] =scan.nextInt();
+			a++;
+		}
+		else if ((temperature>37.5) && (temperature<=40.0))
+		{
+			System.out.println("You have a fever! You are not allowed to enter the premise.");
+					}
+		else if((temperature>=0) && (temperature<36.0))
+		{	
+			System.out.println("You have entered invalid temperature. Please re-check your temperature.");
+		}
+		else
+		{
+			System.out.println("Wrong Input. Plase Try Again.");
+		}
+
+			System.out.println("Ready for next input? (Y/y) : ");
+			pick = scan.next().charAt(0);
+		}
+		while ((pick == 'Y') || (pick == 'y'));
+
+			System.out.println("The number of valid visitors to your premise today is: " +(a-1));
+		{
+			System.out.println("Would you like to see the details of your customer for today? (Y/y)	: ");
+			pick = scan.next().charAt(0);	
+				if ((pick == 'Y') || (pick == 'y'));
+		{
+			System.out.println("No \tName \tPhone Number \n");
+				for(int k = 1; k <a; k++)
+		{
+			System.out.println(k + "\t" + name[k] + "\t" + phone_number[k]);
+				}
+			}
+		}
+
+			System.out.println("------------------------------------------------ \n");
+			System.out.println(" THANK YOU FOR USING OUR SERVICE. GOODBYE! \n");
+			System.out.println("------------------------------------------------ \n");
+			
+			scan.close();
+	}
+
+}
+
+OUTPUT
+------------------------------------- 
+
+
+ WELCOME TO HUNGRY CODER 
+
+------------------------------------- 
+
+Please enter Temperature : 36.5
+Your temperature is : 36.5
+You may enter the premise. Enjoy the service provided in our permise.
+Please enter your name: Aimel
+Please enter your phone number: 01136660272
+Ready for next input? (Y/y) : 
+y
+Please enter Temperature : 37
+Your temperature is : 37.0
+You may enter the premise. Enjoy the service provided in our permise.
+Please enter your name: Daniel
+Please enter your phone number: 01111694527
+Ready for next input? (Y/y) : 
+y
+Please enter Temperature : 38
+Your temperature is : 38.0
+You have a fever! You are not allowed to enter the premise.
+Ready for next input? (Y/y) : 
+y
+Please enter Temperature : 36.2
+Your temperature is : 36.2
+You may enter the premise. Enjoy the service provided in our permise.
+Please enter your name: KD
+Please enter your phone number: 01136660154
+Ready for next input? (Y/y) : 
+y
+Please enter Temperature : 36.5
+Your temperature is : 36.5
+You may enter the premise. Enjoy the service provided in our permise.
+Please enter your name: Danny
+Please enter your phone number: 01155463187
+Ready for next input? (Y/y) : 
+5
+The number of valid visitors to your premise today is: 4
+Would you like to see the details of your customer for today? (Y/y)	: 
+y
+No 	Name 	Phone Number 
+
+1	Aimel	1136660272
+2	Daniel	1111694527
+3	KD	1136660154
+4	Danny	1155463187
+------------------------------------------------ 
+
+ THANK YOU FOR USING OUR SERVICE. GOODBYE! 
+
+------------------------------------------------ 
+
